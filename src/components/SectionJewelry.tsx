@@ -4,14 +4,16 @@ import { ArrowRight } from 'lucide-react';
 export default function SectionJewelry() {
   return (
     <section className="relative flex flex-col items-center justify-center px-4 w-full max-w-6xl mx-auto">
-      <div className="w-full flex flex-col md:flex-row gap-8 justify-center items-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        viewport={{ once: false, margin: "-100px" }}
+        className="w-full bg-[#110505]/40 backdrop-blur-md border border-red-900/30 rounded-3xl p-8 md:p-16 flex flex-col md:flex-row gap-8 justify-center items-center"
+      >
         
         {/* Right Column (content) displayed first on mobile */}
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: false, margin: "-100px" }}
+        <div 
           className="w-full md:w-1/2 flex flex-col justify-center px-4 order-2 md:order-1"
         >
           <span className="text-[10px] uppercase tracking-widest text-red-500 mb-4 flex items-center gap-4">
@@ -34,24 +36,20 @@ export default function SectionJewelry() {
               <ArrowRight size={16} />
             </span>
           </motion.button>
-        </motion.div>
+        </div>
 
         {/* Left Column (Image) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: false, margin: "-100px" }}
+        <div 
           className="w-full md:w-1/2 px-4 order-1 md:order-2"
         >
-          <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/30 rounded-t-full relative overflow-hidden flex items-center justify-center group cursor-pointer shadow-[0_0_50px_rgba(255,0,0,0.1)]">
+          <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/30 rounded-t-full relative overflow-hidden flex items-center justify-center group cursor-pointer shadow-[0_0_50px_rgba(255,0,0,0.1)] mb-4 md:mb-0">
             <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10 transition-transform duration-700 group-hover:scale-110">Add Jewelry Image</span>
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.2)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="absolute inset-0 border border-red-500/0 group-hover:border-red-500/50 rounded-t-full transition-colors duration-700 m-2" />
           </div>
-        </motion.div>
+        </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

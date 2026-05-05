@@ -21,6 +21,9 @@ import SectionMaterials from './components/SectionMaterials';
 import SectionPhilosophy from './components/SectionPhilosophy';
 import SectionCatalog from './components/SectionCatalog';
 import SectionJewelry from './components/SectionJewelry';
+import SectionConcierge from './components/SectionConcierge';
+import SectionCampaign from './components/SectionCampaign';
+import SectionWhispers from './components/SectionWhispers';
 import LoadingScreen from './components/LoadingScreen';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
@@ -59,14 +62,17 @@ export default function App() {
       <main className="w-full flex flex-col items-center pb-24 relative z-10 space-y-16 md:space-y-24">
         <Hero />
         <SectionAtelier />
+        <SectionCampaign />
         <SectionResonance addToCart={addToCart} />
         <SectionMaterials />
         <SectionRunway />
+        <SectionWhispers />
         <SectionRelics addToCart={addToCart} />
         <SectionEditorial />
         <SectionLookbook />
         <SectionArchive />
         <SectionJewelry />
+        <SectionConcierge />
         <SectionCatalog addToCart={addToCart} />
         <SectionNewsletter />
         <SectionPhilosophy />
