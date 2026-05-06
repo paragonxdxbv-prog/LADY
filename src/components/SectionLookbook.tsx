@@ -3,7 +3,7 @@ import { Play } from 'lucide-react';
 
 export default function SectionLookbook() {
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 pt-0 w-full max-w-6xl mx-auto">
+    <section id="lookbook" className="relative flex flex-col items-center justify-center px-4 pt-0 w-full max-w-6xl mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,10 +24,9 @@ export default function SectionLookbook() {
         </div>
 
         <div className="w-full aspect-video bg-[#050202] rounded-2xl border border-red-900/20 relative overflow-hidden group cursor-pointer flex items-center justify-center">
+            <img src="https://i.pinimg.com/736x/1f/ac/8c/1fac8c341c587c421433c45a24973e94.jpg" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Lookbook" />
             {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent opacity-60 z-10" />
-            
-            <span className="text-white/20 font-mono text-sm tracking-[0.3em] uppercase absolute z-0 text-center">Add Fashion Video/Image Here</span>
             
             {/* Play Button */}
             <motion.div 

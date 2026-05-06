@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function SectionJewelry() {
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 w-full max-w-6xl mx-auto">
+    <section id="jewelry" className="relative flex flex-col items-center justify-center px-4 w-full max-w-6xl mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export default function SectionJewelry() {
           className="w-full md:w-1/2 px-4 order-1 md:order-2"
         >
           <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/30 rounded-t-full relative overflow-hidden flex items-center justify-center group cursor-pointer shadow-[0_0_50px_rgba(255,0,0,0.1)] mb-4 md:mb-0">
-            <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10 transition-transform duration-700 group-hover:scale-110">Add Jewelry Image</span>
+            <img src="https://i.pinimg.com/736x/58/86/b4/5886b4c89d574b8c817f74862fefe01c.jpg" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="High Jewelry" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.2)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="absolute inset-0 border border-red-500/0 group-hover:border-red-500/50 rounded-t-full transition-colors duration-700 m-2" />
           </div>

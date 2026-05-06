@@ -20,8 +20,8 @@ export default function SectionRelics({ addToCart }: Props) {
       >
         {/* Left Side image placeholder */}
         <div className="w-full md:w-1/2 relative bg-[#050202] border-b md:border-b-0 md:border-r border-red-900/30 flex items-center justify-center overflow-hidden min-h-[400px]">
+           <img src="https://i.pinimg.com/736x/88/b1/22/88b122cb190f662633822a6b76323378.jpg" className="absolute inset-0 w-full h-full object-cover" alt="LADY No. 1" />
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.1)_0%,transparent_70%)]" />
-           <span className="text-white/20 font-mono text-sm tracking-[0.3em] uppercase z-10 absolute">Add Picture Here</span>
         </div>
 
         {/* Right Side text & CTA */}

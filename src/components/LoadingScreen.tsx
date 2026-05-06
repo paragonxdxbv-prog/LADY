@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 
-export default function LoadingScreen() {
+export default memo(function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -45,4 +45,4 @@ export default function LoadingScreen() {
       )}
     </AnimatePresence>
   );
-}
+});

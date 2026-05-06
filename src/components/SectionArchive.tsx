@@ -14,7 +14,7 @@ export default function SectionArchive() {
       >
         {/* Right Side image placeholder */}
         <div className="w-full md:w-1/2 relative bg-[#050202] border-b md:border-b-0 md:border-l border-red-900/30 flex items-center justify-center overflow-hidden min-h-[400px]">
-           <span className="text-white/20 font-mono text-sm tracking-[0.3em] uppercase z-10 text-center px-4">Add Picture Here<br/>(Jewelry)</span>
+           <img src="https://i.pinimg.com/736x/2b/be/24/2bbe246a10bec01084d409f5729adb95.jpg" className="absolute inset-0 w-full h-full object-cover" alt="Jewelry" />
            <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent opacity-50" />
         </div>
 

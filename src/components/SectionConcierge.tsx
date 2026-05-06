@@ -51,7 +51,7 @@ export default function SectionConcierge() {
         <div className="w-full md:w-1/2 flex justify-center md:justify-end relative z-10">
            <motion.div 
              whileHover={{ scale: 1.02 }}
-             className="w-full max-w-sm bg-[#050202] border border-red-900/40 rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_0_30px_rgba(255,0,0,0.1)]"
+             className="w-full max-w-sm bg-[#0a0505]/60 backdrop-blur-md border border-red-900/40 rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_0_30px_rgba(255,0,0,0.1)]"
            >
              <Calendar size={32} strokeWidth={1} className="text-white/80 mb-6" />
              <h3 className="text-lg font-serif italic text-white mb-2">Request an Audience</h3>

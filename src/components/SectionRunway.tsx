@@ -3,9 +3,9 @@ import { Sparkles } from 'lucide-react';
 
 export default function SectionRunway() {
   const looks = [
-    { name: "Look 01", desc: "Velvet Obsidian Dress", index: 1 },
-    { name: "Look 02", desc: "Crimson Silhouette", index: 2 },
-    { name: "Look 03", desc: "Platinum Mesh Top", index: 3 },
+    { name: "Look 01", desc: "Velvet Obsidian Dress", index: 1, image: "https://i.pinimg.com/736x/74/05/a5/7405a500c3fb4d845e8ad3b242997c0f.jpg" },
+    { name: "Look 02", desc: "Crimson Silhouette", index: 2, image: "https://i.pinimg.com/736x/eb/46/ae/eb46ae1ab8198d5bde26565ff2c3f1ab.jpg" },
+    { name: "Look 03", desc: "Platinum Mesh Top", index: 3, image: "https://i.pinimg.com/736x/42/c3/0e/42c30ee7e0cdf22e1bdd54bc414538cc.jpg" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function SectionRunway() {
               className="group cursor-pointer flex flex-col"
             >
               <div className="w-full aspect-[2/3] bg-[#050202] border border-red-900/30 rounded-2xl relative overflow-hidden flex items-center justify-center mb-4">
-                 <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10">Add Picture Here</span>
+                 <img src={look.image} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={look.name} />
                  <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/20 transition-colors duration-500 z-0" />
                  {/* Number indicator */}
                  <div className="absolute top-4 left-4 font-mono text-xs text-white/50 tracking-widest z-10">

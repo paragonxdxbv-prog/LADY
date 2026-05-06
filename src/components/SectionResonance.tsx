@@ -7,10 +7,10 @@ interface Props {
 
 export default function SectionResonance({ addToCart }: Props) {
   const products = [
-    { id: '1', name: "LADY Midnight Perfume", price: 450.00, category: "Fragrance" },
-    { id: '2', name: "Crimson Silk Slip", price: 1200.00, category: "Brasless Couture" },
-    { id: '3', name: "LADY Diamond Studs", price: 3800.00, category: "Jewelry" },
-    { id: '4', name: "Obsidian Halo Ring", price: 5200.00, category: "Jewelry" },
+    { id: '1', name: "LADY Midnight Perfume", price: 450.00, category: "Fragrance", image: "https://i.pinimg.com/736x/2b/be/24/2bbe246a10bec01084d409f5729adb95.jpg" },
+    { id: '2', name: "Crimson Silk Slip", price: 1200.00, category: "Brasless Couture", image: "https://i.pinimg.com/736x/42/c3/0e/42c30ee7e0cdf22e1bdd54bc414538cc.jpg" },
+    { id: '3', name: "LADY Diamond Studs", price: 3800.00, category: "Jewelry", image: "https://i.pinimg.com/736x/c3/99/b1/c399b19670382335a9caa7df775bd617.jpg" },
+    { id: '4', name: "Obsidian Halo Ring", price: 5200.00, category: "Jewelry", image: "https://i.pinimg.com/736x/74/05/a5/7405a500c3fb4d845e8ad3b242997c0f.jpg" },
   ];
 
   return (
@@ -49,8 +49,8 @@ export default function SectionResonance({ addToCart }: Props) {
               whileHover={{ y: -10 }}
               className="flex flex-col group cursor-pointer"
             >
-              <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/20 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
-                <span className="text-white/10 font-mono text-[10px] tracking-widest uppercase absolute z-10 transition-transform duration-700 group-hover:scale-110">Add Picture Here</span>
+              <div className="w-full aspect-[4/5] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/40 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
+                <img src={product.image} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt={product.name} />
                 <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                 
                 <motion.button 

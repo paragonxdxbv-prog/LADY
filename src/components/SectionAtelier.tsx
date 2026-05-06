@@ -32,8 +32,8 @@ export default function SectionAtelier() {
             whileHover={{ y: -10 }}
             className="flex flex-col group cursor-pointer"
           >
-            <div className="w-full aspect-[3/4] bg-[#050202] border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-              <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10">Add Picture Here</span>
+            <div className="w-full aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
+              <img src="https://i.pinimg.com/1200x/eb/6b/80/eb6b8043b31aa7e8482635c6f119dee0.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Brasless Couture" />
               <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">
@@ -54,8 +54,8 @@ export default function SectionAtelier() {
             whileHover={{ y: -10 }}
             className="flex flex-col group cursor-pointer md:mt-12"
           >
-            <div className="w-full aspect-[3/4] bg-[#050202] border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-               <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10">Add Picture Here</span>
+            <div className="w-full aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
+               <img src="https://i.pinimg.com/1200x/9e/52/56/9e5256e872a60f997ebdd782045e230e.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Signature Parfumes" />
                <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">
@@ -76,8 +76,8 @@ export default function SectionAtelier() {
             whileHover={{ y: -10 }}
             className="flex flex-col group cursor-pointer"
           >
-            <div className="w-full aspect-[3/4] bg-[#050202] border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-               <span className="text-white/20 font-mono text-[10px] text-center px-4 tracking-widest uppercase absolute z-10">Add Picture Here</span>
+            <div className="w-full aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
+               <img src="https://i.pinimg.com/1200x/99/c8/7b/99c87bc12a24b96ec8b14fdd640ebb5d.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="High Jewelry" />
                <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { CartItem } from '../types';
+import { memo } from 'react';
 
 interface CartProps {
   isOpen: boolean;
@@ -9,7 +10,7 @@ interface CartProps {
   onRemove: (id: string) => void;
 }
 
-export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps) {
+export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps) {
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -54,8 +55,12 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
               ) : (
                 cartItems.map((item) => (
                   <motion.div key={item.id} layout className="flex gap-4 p-4 border border-red-900/20 rounded-2xl bg-black/40">
-                    <div className="w-20 h-24 bg-[#110505] rounded-xl flex items-center justify-center border border-red-900/10 shrink-0">
-                       <span className="text-[8px] uppercase text-white/20">IMG</span>
+                    <div className="w-20 h-24 bg-[#110505] rounded-xl flex items-center justify-center border border-red-900/10 shrink-0 overflow-hidden relative">
+                       {item.image ? (
+                         <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover" />
+                       ) : (
+                         <span className="text-[8px] uppercase text-white/20">IMG</span>
+                       )}
                     </div>
                     <div className="flex flex-col flex-1 justify-center">
                       <div className="flex justify-between items-start">
@@ -72,7 +77,7 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
                            <Minus size={10} className="opacity-50 cursor-pointer" />
                            <span className="text-xs font-mono">{item.quantity}</span>
                            <Plus size={10} className="opacity-50 cursor-pointer" />
-                        </div>
+                         </div>
                         <span className="font-mono text-sm text-white/90">${(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     </div>
@@ -98,4 +103,4 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
       )}
     </AnimatePresence>
   );
-}
+});

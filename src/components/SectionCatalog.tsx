@@ -7,14 +7,14 @@ interface Props {
 
 export default function SectionCatalog({ addToCart }: Props) {
   const products = [
-    { id: 'c1', name: "Midnight Rose Gown", price: 3400.00, category: "Dresses" },
-    { id: 'c2', name: "Onyx Velvet Suit", price: 2800.00, category: "Couture" },
-    { id: 'c3', name: "LADY Ruby Pendant", price: 6500.00, category: "Jewelry" },
-    { id: 'c4', name: "Sapphire Drop Earrings", price: 4200.00, category: "Jewelry" },
-    { id: 'c5', name: "Pure Silk Robe", price: 950.00, category: "Sleepwear" },
-    { id: 'c6', name: "LADY Intense Rouge", price: 120.00, category: "Makeup" },
-    { id: 'c7', name: "Golden Aura Perfume", price: 350.00, category: "Fragrance" },
-    { id: 'c8', name: "Diamond Tennis Bracelet", price: 12000.00, category: "Jewelry" },
+    { id: 'c1', name: "Midnight Rose Gown", price: 3400.00, category: "Dresses", image: "https://i.pinimg.com/736x/fe/5d/27/fe5d27e46f4af4c13d28a5a6d67aeb2b.jpg" },
+    { id: 'c2', name: "Onyx Velvet Suit", price: 2800.00, category: "Couture", image: "https://i.pinimg.com/736x/b1/d9/aa/b1d9aa0521dd2b92e188965a83fdd3fc.jpg" },
+    { id: 'c3', name: "LADY Ruby Pendant", price: 6500.00, category: "Jewelry", image: "https://i.pinimg.com/1200x/9e/52/56/9e5256e872a60f997ebdd782045e230e.jpg" },
+    { id: 'c4', name: "Sapphire Drop Earrings", price: 4200.00, category: "Jewelry", image: "https://i.pinimg.com/736x/2b/be/24/2bbe246a10bec01084d409f5729adb95.jpg" },
+    { id: 'c5', name: "Pure Silk Robe", price: 950.00, category: "Sleepwear", image: "https://i.pinimg.com/736x/26/0f/c1/260fc1e2041b18275f4d5e6ab540f0d4.jpg" },
+    { id: 'c6', name: "LADY Intense Rouge", price: 120.00, category: "Makeup", image: "https://i.pinimg.com/736x/c3/99/b1/c399b19670382335a9caa7df775bd617.jpg" },
+    { id: 'c7', name: "Golden Aura Perfume", price: 350.00, category: "Fragrance", image: "https://i.pinimg.com/736x/74/05/a5/7405a500c3fb4d845e8ad3b242997c0f.jpg" },
+    { id: 'c8', name: "Diamond Tennis Bracelet", price: 12000.00, category: "Jewelry", image: "https://i.pinimg.com/736x/eb/46/ae/eb46ae1ab8198d5bde26565ff2c3f1ab.jpg" },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function SectionCatalog({ addToCart }: Props) {
               className="flex flex-col group cursor-pointer"
             >
               <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/20 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
-                <span className="text-white/10 font-mono text-[10px] tracking-widest uppercase absolute z-10 transition-transform duration-700 group-hover:scale-110">Add Picture Here</span>
+                <img src={product.image} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt={product.name} />
                 <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                 
                 <motion.button 

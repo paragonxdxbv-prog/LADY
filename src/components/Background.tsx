@@ -18,42 +18,36 @@ export default function Background() {
   const [petals, setPetals] = useState<any[]>([]);
 
   useEffect(() => {
-    setPetals(generatePetals(30));
+    setPetals(generatePetals(60));
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#050505]">
+    <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#020101]">
       {/* Background Image provided by user */}
       <img 
-        src="https://i.ibb.co/rKYGDRkL/Chat-GPT-Image-May-5-2026-05-32-42-PM.png"
+        src="https://i.postimg.cc/ZRmCd1f0/Chat-GPT-Image-May-5-2026-05-32-42-PM.png"
         alt="Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        className="absolute inset-0 w-full h-full object-cover opacity-90"
       />
       {/* Dark gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-black/20 to-black/90" />
-      
-      {/* A subtle red radial glow in the center */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/20 rounded-full blur-[120px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
 
-      {/* Falling red sparks/petals */}
+      {/* Falling leaves */}
       {petals.map((petal) => (
         <motion.div
           key={petal.id}
-          className="absolute rounded-full"
+          className="absolute text-xl origin-center"
           style={{
             left: `${petal.x}vw`,
             top: `-10vh`, // Start just above viewport
-            width: petal.size,
-            height: petal.size * (1 + Math.random()),
-            background: 'linear-gradient(to bottom, #ff3333, #aa0000)',
-            opacity: 0.6,
-            filter: 'blur(1px)',
+            filter: 'drop-shadow(0 0 5px rgba(255,0,0,0.5))',
             transform: `skewX(${petal.skewX}deg)`
           }}
           animate={{
             y: ['0vh', '110vh'],
             x: [`${petal.x}vw`, `${petal.x - 5 + Math.random() * 10}vw`],
-            rotate: [0, 360],
+            rotate: [0, 360, 720],
+            rotateX: [0, 180, 360],
           }}
           transition={{
             duration: petal.duration,
@@ -61,7 +55,11 @@ export default function Background() {
             delay: petal.delay,
             ease: 'linear',
           }}
-        />
+        >
+          <svg viewBox="0 0 24 24" className="w-4 h-4 text-red-900/60 fill-current">
+            <path d="M12 2C8 2 4 6 4 12c0 6 8 10 8 10s8-4 8-10c0-6-4-10-8-10z" />
+          </svg>
+        </motion.div>
       ))}
     </div>
   );
