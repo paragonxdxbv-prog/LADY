@@ -5,33 +5,33 @@ export default function SectionMaterials() {
   const materials = [
     {
       icon: Diamond,
-      title: "Flawless Cut",
-      desc: "Ethically sourced diamonds, shaped by master artisans for maximum brilliance."
+      title: "Croială Impecabilă",
+      desc: "Diamante obținute etic, modelate de meșteri artizani pentru o strălucire maximă."
     },
     {
       icon: Droplet,
-      title: "Liquid Gold",
-      desc: "Our signature perfumes use rare extracts aged over decades."
+      title: "Aur Lichid",
+      desc: "Parfumurile noastre folosesc extracte rare, învechite timp de decenii."
     },
     {
       icon: Sparkles,
-      title: "Finest Silks",
-      desc: "Each thread woven to perfection, offering unparalleled comfort and drape."
+      title: "Ingrediente Fine",
+      desc: "Fiecare nuanță de makeup este creată la perfecțiune pentru acoperire optimă."
     }
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 w-full max-w-6xl mx-auto py-12">
+    <section className="relative flex flex-col items-center justify-center px-4 w-full max-w-6xl mx-auto py-10">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
         viewport={{ once: false, margin: "-100px" }}
-        className="w-full bg-[#110505]/40 backdrop-blur-md border border-red-900/30 rounded-3xl p-8 md:p-12"
+        className="w-full bg-[#130606]/45 backdrop-blur-lg border border-red-900/40 rounded-[2rem] p-8 md:p-12 shadow-[0_0_40px_rgba(255,0,0,0.05)]"
       >
-        <div className="w-full flex justify-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-sans font-medium tracking-tight text-white mb-2 text-center">
-              The <span className="font-serif italic text-red-100/90 font-light text-4xl md:text-6xl pl-2">Elements</span>
+        <div className="w-full flex justify-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-sans font-medium tracking-tight text-white mb-2 text-center">
+              Adevăratele <span className="font-serif italic text-red-100/90 font-light text-3xl md:text-5xl pl-2">Elemente</span>
             </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full">
@@ -47,8 +47,8 @@ export default function SectionMaterials() {
               <div className="w-16 h-16 rounded-full border border-red-900/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-red-900/20 group-hover:border-red-500 transition-all duration-300">
                 <mat.icon className="text-white/60 group-hover:text-white transition-colors" strokeWidth={1} size={24} />
               </div>
-              <h3 className="text-sm font-bold tracking-widest uppercase text-white mb-3">{mat.title}</h3>
-              <p className="text-xs text-white/50 leading-relaxed balance">{mat.desc}</p>
+              <h3 className="text-[10px] font-bold tracking-widest uppercase text-white mb-3">{mat.title}</h3>
+              <p className="text-[10px] text-white/50 leading-relaxed balance">{mat.desc}</p>
             </motion.div>
           ))}
         </div>

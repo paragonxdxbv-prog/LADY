@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { useEffect, useState, memo } from 'react';
+import { useEffect, useState } from 'react';
 
-export default memo(function LoadingScreen() {
+export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default memo(function LoadingScreen() {
             className="flex flex-col items-center"
           >
             <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-white uppercase select-none drop-shadow-[0_0_30px_rgba(255,0,0,0.5)]">
-              LADY
+              F.E. LADY S.R.L.
             </h1>
             <motion.div 
               initial={{ scaleX: 0 }}
@@ -37,12 +37,12 @@ export default memo(function LoadingScreen() {
               className="h-[1px] bg-red-500/50 mt-4 origin-left"
               style={{ width: "100%" }}
             />
-            <p className="mt-4 text-[10px] font-bold tracking-[0.5em] text-white/50 uppercase">
-              Initializing Experience
+            <p className="mt-4 text-[10px] font-bold tracking-[0.3em] text-white/50 uppercase text-center w-max">
+              Bine ați venit la magazinul nostru
             </p>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
-});
+}

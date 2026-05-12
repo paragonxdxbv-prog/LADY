@@ -1,40 +1,34 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { ShoppingCart, Menu, X } from 'lucide-react';
-import { memo, useState, type MouseEvent } from 'react';
+import { useState } from 'react';
+import type { MouseEvent } from 'react';
 
 interface NavProps {
   onOpenCart: () => void;
   cartItemsCount: number;
 }
 
-export default memo(function Nav({ onOpenCart, cartItemsCount }: NavProps) {
+export default function Nav({ onOpenCart, cartItemsCount }: NavProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollTo = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMobileMenuOpen(false);
   };
-
-  const navLinks = [
-    { label: 'Couture', id: 'collection' },
-    { label: 'Jewelry', id: 'jewelry' },
-    { label: 'Lookbook', id: 'lookbook' },
-    { label: 'Catalog', id: 'catalog' },
-  ];
 
   return (
     <>
       <motion.nav
-        initial={{ y: -50, opacity: 0 }}
+        initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-        className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[60] flex items-center justify-between px-4 md:px-6 py-2 md:py-3 rounded-full bg-black/60 backdrop-blur-md border border-red-900/30 w-[95vw] md:w-max max-w-3xl"
+        className="fixed bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-3 md:px-6 py-2 md:py-3 rounded-full bg-black/60 backdrop-blur-md border border-red-900/30 w-[95vw] lg:w-max max-w-5xl"
       >
-        <div className="flex items-center gap-2 md:gap-3 pr-2 md:pr-6 border-r border-red-900/30">
+        <div className="flex items-center gap-2 pr-2 md:pr-4 border-r border-red-900/30 shrink-0">
           <motion.div 
             animate={{ boxShadow: ['0 0 10px rgba(255,0,0,0.2)', '0 0 20px rgba(255,0,0,0.6)', '0 0 10px rgba(255,0,0,0.2)'] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -46,81 +40,68 @@ export default memo(function Nav({ onOpenCart, cartItemsCount }: NavProps) {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </motion.div>
-          <span className="font-sans font-bold tracking-widest text-[10px] md:text-sm text-white">LADY</span>
+          <span className="font-sans font-bold tracking-tight text-[10px] md:text-xs text-white uppercase whitespace-nowrap">F.E. LADY S.R.L.</span>
         </div>
         
-        <div className="hidden md:flex flex-row items-center gap-3 md:gap-6 text-[8px] md:text-xs font-semibold tracking-[0.15em] text-white/70 uppercase whitespace-nowrap px-4 border-r border-red-900/30 pr-6">
-          {navLinks.map((link) => (
-             <motion.a 
-                key={link.id}
-                whileHover={{ scale: 1.05 }} 
-                whileTap={{ scale: 0.95 }} 
-                href={`#${link.id}`} 
-                onClick={(e) => scrollTo(e, link.id)} 
-                className="hover:text-white transition-colors cursor-pointer"
-             >
-               {link.label}
-             </motion.a>
-          ))}
+        {/* Desktop Links */}
+        <div className="hidden lg:flex flex-row items-center gap-5 text-[10px] font-semibold tracking-widest text-white/70 uppercase whitespace-nowrap px-4 shrink-0">
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="hover:text-white transition-colors cursor-pointer">Parfumuri</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#bijuterii" onClick={(e) => scrollTo(e, 'bijuterii')} className="hover:text-white transition-colors cursor-pointer">Bijuterii</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#makeup" onClick={(e) => scrollTo(e, 'makeup')} className="hover:text-white transition-colors cursor-pointer">Makeup</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#accesorii" onClick={(e) => scrollTo(e, 'accesorii')} className="hover:text-white transition-colors cursor-pointer">Accesorii & Genți</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#seturi" onClick={(e) => scrollTo(e, 'seturi')} className="hover:text-white transition-colors cursor-pointer">Seturi Cadou</motion.a>
         </div>
 
-        <div className="pl-2 flex items-center gap-3">
+        <div className="px-3 border-l border-red-900/30 items-center shrink-0 hidden lg:flex">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href="#parfumuri"
+            onClick={(e) => scrollTo(e, 'parfumuri')}
+            className="flex items-center gap-2 group text-[9px] md:text-xs font-semibold tracking-widest text-red-400 hover:text-red-300 transition-colors whitespace-nowrap cursor-pointer"
+          >
+            <span className="uppercase animate-pulse">Derulează în jos &darr;</span>
+          </motion.a>
+        </div>
+
+        <div className="flex items-center justify-end flex-grow lg:flex-none gap-3 pl-2 lg:pl-4 lg:border-l lg:border-red-900/30">
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden text-white/70 hover:text-white cursor-pointer transition-colors p-1"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+          </button>
+
           <motion.button
             whileHover={{ scale: 1.05 }} 
             whileTap={{ scale: 0.95 }}
             onClick={onOpenCart}
-            className="flex items-center gap-2 group text-[9px] md:text-xs font-semibold tracking-widest text-white/70 hover:text-white transition-colors whitespace-nowrap cursor-pointer mr-2 md:mr-0"
+            className="flex items-center gap-2 group text-[9px] md:text-[10px] font-semibold tracking-widest text-white/70 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
           >
             <ShoppingCart size={14} className="md:w-[14px] md:h-[14px] w-3 h-3" />
-            <span className="uppercase hidden sm:inline">Bag ({cartItemsCount})</span>
-            <span className="uppercase sm:hidden">{cartItemsCount}</span>
+            <span className="uppercase">Coș ({cartItemsCount})</span>
           </motion.button>
-          
-          <button 
-            className="md:hidden text-white/70 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
         </div>
       </motion.nav>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center pt-20"
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 bg-black/80 backdrop-blur-xl border border-red-900/50 rounded-3xl p-6 w-[90vw] max-w-sm flex flex-col gap-4 text-center lg:hidden"
           >
-            <div className="flex flex-col items-center gap-8">
-              {navLinks.map((link) => (
-                <motion.a
-                  key={link.id}
-                  href={`#${link.id}`}
-                  onClick={(e) => scrollTo(e, link.id)}
-                  whileHover={{ scale: 1.05, color: '#ffffff' }}
-                  className="text-2xl font-serif text-white/70 uppercase tracking-widest"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </div>
-            
-            <motion.div 
-               animate={{ boxShadow: ['0 0 10px rgba(255,0,0,0.2)', '0 0 20px rgba(255,0,0,0.6)', '0 0 10px rgba(255,0,0,0.2)'] }}
-               transition={{ duration: 2, repeat: Infinity }}
-               className="mt-16 relative w-16 h-16 shrink-0 rounded-full overflow-hidden border-[2px] border-red-500 bg-black"
-            >
-              <img 
-                src="https://i.ibb.co/Tx4GQrNk/Jennifer.jpg" 
-                alt="LADY Logo" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </motion.div>
+            <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase mb-2 border-b border-white/10 pb-2">Meniu</span>
+            <a href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Parfumuri</a>
+            <a href="#bijuterii" onClick={(e) => scrollTo(e, 'bijuterii')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Bijuterii</a>
+            <a href="#makeup" onClick={(e) => scrollTo(e, 'makeup')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Makeup</a>
+            <a href="#accesorii" onClick={(e) => scrollTo(e, 'accesorii')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Accesorii & Genți</a>
+            <a href="#seturi" onClick={(e) => scrollTo(e, 'seturi')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Seturi Cadou</a>
+            <a href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="text-[10px] font-bold tracking-widest text-red-500 uppercase hover:text-red-400 transition-colors py-2 mt-2 border-t border-red-900/30 pt-4">Derulează în jos &darr;</a>
           </motion.div>
         )}
       </AnimatePresence>
     </>
   );
-});
+}

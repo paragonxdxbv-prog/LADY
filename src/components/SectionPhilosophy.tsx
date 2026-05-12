@@ -5,33 +5,33 @@ export default function SectionPhilosophy() {
   const pillars = [
     {
       icon: ShieldCheck,
-      title: "Unyielding Standards",
-      desc: "We accept nothing short of perfection. Every piece is rigorously tested."
+      title: "Misiunea Noastră",
+      desc: "Să oferim produse de o calitate incomparabilă, celebrând frumusețea și eleganța feminină la nivel global."
     },
     {
       icon: Gem,
-      title: "Rare Materials",
-      desc: "Sourcing only the most exclusive resources from across the globe."
+      title: "Viziunea F.E. LADY",
+      desc: "Să devenim reperul absolut în materie de lux, rafinament și inovație în industria de beauty și accesorii."
     },
     {
       icon: Wine,
-      title: "Timeless Allure",
-      desc: "Creating masterworks that outlive generations and transcend trends."
+      title: "Valori Fundamentale",
+      desc: "Integritate, pasiune pentru excelență, respect pentru autenticitate și orientare absolută către client."
     }
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 pt-0 w-full max-w-6xl mx-auto">
+    <section className="relative flex flex-col items-center justify-center px-4 pt-12 w-full max-w-6xl mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
         viewport={{ once: false, margin: "-100px" }}
-        className="w-full bg-[#110505]/40 backdrop-blur-md border border-red-900/30 rounded-3xl p-8 md:p-16 flex flex-col items-center"
+        className="w-full bg-[#130606]/45 backdrop-blur-lg border border-red-900/40 rounded-[2rem] p-8 md:p-14 flex flex-col items-center shadow-[0_0_40px_rgba(255,0,0,0.05)]"
       >
-        <div className="w-full mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-sans font-medium tracking-tight text-white mb-2 w-full text-center">
-            The <span className="font-serif italic text-red-100/90 font-light text-4xl md:text-6xl">Philosophy</span>
+        <div className="w-full mb-14 text-center">
+          <h2 className="text-2xl md:text-4xl font-sans font-medium tracking-tight text-white mb-2 w-full text-center">
+            Marea <span className="font-serif italic text-red-100/90 font-light text-3xl md:text-5xl">Filosofie</span>
           </h2>
         </div>
 
@@ -50,8 +50,8 @@ export default function SectionPhilosophy() {
                  <div className="absolute inset-0 bg-red-500/10 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
                  <pillar.icon className="text-red-500/80 group-hover:text-white transition-colors relative z-10" strokeWidth={1} size={32} />
               </div>
-              <h3 className="text-sm font-bold tracking-widest uppercase text-white mb-4">{pillar.title}</h3>
-              <p className="text-xs text-white/50 leading-loose max-w-[250px]">{pillar.desc}</p>
+              <h3 className="text-[10px] font-bold tracking-widest uppercase text-white mb-3">{pillar.title}</h3>
+              <p className="text-[10px] text-white/50 leading-loose max-w-[250px]">{pillar.desc}</p>
             </motion.div>
           ))}
         </div>

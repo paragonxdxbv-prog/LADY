@@ -19,10 +19,6 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-html {
-  font-size: 80%; /* Scales down all rem-based units globally */
-}
-
 /* Custom selection */
 ::selection {
   background: rgba(255, 0, 0, 0.3);

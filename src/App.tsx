@@ -9,6 +9,7 @@ import CustomCursor from './components/CustomCursor';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import SectionAtelier from './components/SectionAtelier';
+import SectionCatalog from './components/SectionCatalog';
 import SectionResonance from './components/SectionResonance';
 import LoadingScreen from './components/LoadingScreen';
 import Footer from './components/Footer';
@@ -16,24 +17,14 @@ import Cart from './components/Cart';
 import { CartItem } from './types';
 
 // Lazy loading below-the-fold components for better initial load performance
+const SectionAbout = lazy(() => import('./components/SectionAbout'));
+const SectionTimeline = lazy(() => import('./components/SectionTimeline'));
 const SectionRelics = lazy(() => import('./components/SectionRelics'));
-const SectionLookbook = lazy(() => import('./components/SectionLookbook'));
-const SectionArchive = lazy(() => import('./components/SectionArchive'));
-const SectionNewsletter = lazy(() => import('./components/SectionNewsletter'));
-const SectionRunway = lazy(() => import('./components/SectionRunway'));
-const SectionPresence = lazy(() => import('./components/SectionPresence'));
 const SectionMaterials = lazy(() => import('./components/SectionMaterials'));
 const SectionPhilosophy = lazy(() => import('./components/SectionPhilosophy'));
-const SectionCatalog = lazy(() => import('./components/SectionCatalog'));
 const SectionJewelry = lazy(() => import('./components/SectionJewelry'));
+const SectionPress = lazy(() => import('./components/SectionPress'));
 const SectionConcierge = lazy(() => import('./components/SectionConcierge'));
-const SectionWhispers = lazy(() => import('./components/SectionWhispers'));
-const SectionExperience = lazy(() => import('./components/SectionExperience'));
-const SectionVIP = lazy(() => import('./components/SectionVIP'));
-const SectionGifting = lazy(() => import('./components/SectionGifting'));
-const SectionArtistry = lazy(() => import('./components/SectionArtistry'));
-const SectionBespoke = lazy(() => import('./components/SectionBespoke'));
-const SectionStoreLocations = lazy(() => import('./components/SectionStoreLocations'));
 
 // Suspense fallback for lazy loaded sections
 const SectionLoader = () => (
@@ -46,7 +37,7 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = useCallback((product: any) => {
+  const addToCart = useCallback((product: Omit<CartItem, 'quantity'>) => {
     setCartItems(prev => {
       const existing = prev.find(item => item.id === product.id);
       if (existing) {
@@ -72,28 +63,19 @@ export default function App() {
         {/* Above the fold (eagerly loaded) */}
         <Hero />
         <SectionAtelier />
-        <SectionResonance addToCart={addToCart} />
+        <SectionCatalog addToCart={addToCart} />
 
         {/* Below the fold (lazy loaded) */}
         <Suspense fallback={<SectionLoader />}>
-          <SectionArtistry />
+          <SectionAbout />
+          <SectionTimeline />
+          <SectionResonance />
           <SectionMaterials />
-          <SectionRunway />
-          <SectionWhispers />
-          <SectionRelics addToCart={addToCart} />
-          <SectionExperience />
-          <SectionLookbook />
-          <SectionArchive />
+          <SectionRelics />
           <SectionJewelry />
-          <SectionVIP />
+          <SectionPress />
           <SectionConcierge />
-          <SectionBespoke />
-          <SectionGifting />
-          <SectionCatalog addToCart={addToCart} />
-          <SectionNewsletter />
           <SectionPhilosophy />
-          <SectionStoreLocations />
-          <SectionPresence />
         </Suspense>
       </main>
 

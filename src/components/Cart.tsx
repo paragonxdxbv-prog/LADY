@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { CartItem } from '../types';
-import { memo } from 'react';
 
 interface CartProps {
   isOpen: boolean;
@@ -10,7 +9,7 @@ interface CartProps {
   onRemove: (id: string) => void;
 }
 
-export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps) {
+export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps) {
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -38,7 +37,7 @@ export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: Cart
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-red-900/30">
               <h2 className="font-sans font-bold text-xl uppercase tracking-widest text-white flex items-center gap-3">
-                <ShoppingBag size={20} /> Your Bag
+                <ShoppingBag size={20} /> Coșul Tău
               </h2>
               <button onClick={onClose} className="p-2 border border-red-900/30 rounded-full text-white hover:text-red-500 hover:border-red-500 transition-colors cursor-pointer">
                 <X size={16} />
@@ -50,14 +49,14 @@ export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: Cart
               {cartItems.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-white/50 gap-4">
                   <ShoppingBag size={48} strokeWidth={1} className="opacity-20" />
-                  <p className="tracking-widest uppercase text-xs">Your bag is empty.</p>
+                  <p className="tracking-widest uppercase text-xs">Coșul tău este gol.</p>
                 </div>
               ) : (
                 cartItems.map((item) => (
                   <motion.div key={item.id} layout className="flex gap-4 p-4 border border-red-900/20 rounded-2xl bg-black/40">
                     <div className="w-20 h-24 bg-[#110505] rounded-xl flex items-center justify-center border border-red-900/10 shrink-0 overflow-hidden relative">
                        {item.image ? (
-                         <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover" />
+                         <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[6px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-1 border border-red-900/40">AICEA VINE POZELE</div>
                        ) : (
                          <span className="text-[8px] uppercase text-white/20">IMG</span>
                        )}
@@ -77,7 +76,7 @@ export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: Cart
                            <Minus size={10} className="opacity-50 cursor-pointer" />
                            <span className="text-xs font-mono">{item.quantity}</span>
                            <Plus size={10} className="opacity-50 cursor-pointer" />
-                         </div>
+                        </div>
                         <span className="font-mono text-sm text-white/90">${(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     </div>
@@ -88,13 +87,13 @@ export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: Cart
 
             {/* Footer */}
             {cartItems.length > 0 && (
-              <div className="p-6 border-t border-red-900/30 bg-black flex flex-col gap-6">
+               <div className="p-6 border-t border-red-900/30 bg-black flex flex-col gap-6">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/60 tracking-widest uppercase text-xs">Subtotal</span>
+                  <span className="text-white/60 tracking-widest uppercase text-xs">Total</span>
                   <span className="font-mono text-lg text-white">${subtotal.toFixed(2)}</span>
                 </div>
                 <button className="w-full bg-white text-black py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white border border-transparent hover:border-red-500 transition-all cursor-pointer">
-                  Proceed to Checkout
+                  Finalizează Comanda
                 </button>
               </div>
             )}
@@ -103,4 +102,4 @@ export default memo(function Cart({ isOpen, onClose, cartItems, onRemove }: Cart
       )}
     </AnimatePresence>
   );
-});
+}

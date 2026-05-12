@@ -18,19 +18,19 @@ export default function Background() {
   const [petals, setPetals] = useState<any[]>([]);
 
   useEffect(() => {
-    setPetals(generatePetals(60));
+    setPetals(generatePetals(30));
   }, []);
 
   return (
     <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#020101]">
       {/* Background Image provided by user */}
       <img 
-        src="https://i.postimg.cc/ZRmCd1f0/Chat-GPT-Image-May-5-2026-05-32-42-PM.png"
+        src="https://i.ibb.co/rKYGDRkL/Chat-GPT-Image-May-5-2026-05-32-42-PM.png"
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover opacity-90"
       />
       {/* Dark gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/80" />
 
       {/* Falling leaves */}
       {petals.map((petal) => (
