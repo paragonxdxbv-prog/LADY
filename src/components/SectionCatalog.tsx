@@ -14,7 +14,7 @@ export default function SectionCatalog({ addToCart }: Props) {
   const products = [
     { id: 'c1', name: "Esență Dark Orchid", price: 450.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023.jpeg" },
     { id: 'c2', name: "Parfum Golden Aura", price: 350.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_2.jpeg" },
-    { id: 'c3', name: "LADY Midnight", price: 500.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_3.jpeg" },
+    { id: 'c3', name: "LADY Midnight", price: 450.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_3.jpeg" },
     { id: 'h1', name: "Parfum de Cameră Santal", price: 180.00, category: "Parfumuri", image: "/Home_Fragrances_with_logo_LADY_202605181023.jpeg" },
     { id: 'c4', name: "LADY Pandantiv Rubin", price: 480.00, category: "Bijuterii", image: "/Bijuterii_Handmade_LADY_logo_202605181023.jpeg" },
     { id: 'c5', name: "Cercei Swarovski", price: 420.00, category: "Bijuterii", image: "/Bijuterii_Handmade_LADY_logo_202605181023_2.jpeg" },
@@ -30,7 +30,7 @@ export default function SectionCatalog({ addToCart }: Props) {
     { id: 's1', name: "LADY Hair Elixir", price: 210.00, category: "Skin & Hair", image: "/Make_body_care_products_logo_202605181811.jpeg" },
     { id: 's2', name: "Șampon Revitalizant", price: 90.00, category: "Skin & Hair", image: "/Make_body_care_products_logo_202605181811_2.jpeg" },
     { id: 's3', name: "Ser cu Acid Hialuronic", price: 150.00, category: "Skin & Hair", image: "/make_me_som_pordcuts_for_202605181811.jpeg" },
-    { id: 'm1', name: "Parfum LADY Homme", price: 480.00, category: "Pentru El", image: "/Make_products_for_Men's_Collection_202605181811.jpeg" },
+    { id: 'm1', name: "Parfum LADY Homme", price: 480.00, category: "Pentru El", image: "/Make_products_for_Mens_Collection_202605181811.jpeg" },
     { id: 'm2', name: "Set Îngrijire Barbă", price: 230.00, category: "Pentru El", image: "/make_me_som_pordcuts_for_202605181811_2.jpeg" },
   ];
 

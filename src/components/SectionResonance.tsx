@@ -61,6 +61,7 @@ export default function SectionResonance() {
               <div className="flex flex-col bg-transparent px-1">
                 <span className="text-[8px] uppercase tracking-widest text-red-500/80 mb-1">{product.category}</span>
                 <h3 className="text-xs font-bold text-white mb-2 line-clamp-1 group-hover:text-red-400 transition-colors">{product.name}</h3>
+                <span className="font-mono text-xs text-white/70">{product.price.toFixed(2)} RON</span>
               </div>
             </motion.div>
           ))}

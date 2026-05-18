@@ -18,7 +18,7 @@ export default function Background() {
   const [petals, setPetals] = useState<any[]>([]);
 
   useEffect(() => {
-    setPetals(generatePetals(150));
+    setPetals(generatePetals(45)); // Balanced between visual effect and performance
   }, []);
 
   return (
@@ -40,7 +40,6 @@ export default function Background() {
           style={{
             left: `${petal.x}vw`,
             top: `-10vh`, // Start just above viewport
-            filter: 'drop-shadow(0 0 5px rgba(255,0,0,0.5))',
             transform: `skewX(${petal.skewX}deg)`
           }}
           animate={{
@@ -56,7 +55,7 @@ export default function Background() {
             ease: 'linear',
           }}
         >
-          <svg viewBox="0 0 24 24" className="w-4 h-4 text-red-900/60 fill-current">
+          <svg viewBox="0 0 24 24" className="w-4 h-4 text-red-900/40 fill-current">
             <path d="M12 2C8 2 4 6 4 12c0 6 8 10 8 10s8-4 8-10c0-6-4-10-8-10z" />
           </svg>
         </motion.div>
