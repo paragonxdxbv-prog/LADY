@@ -9,25 +9,29 @@ interface Props {
 
 export default function SectionCatalog({ addToCart }: Props) {
   const [activeCategory, setActiveCategory] = useState("Toate");
-  const categories = ["Toate", "Parfumuri", "Bijuterii", "Makeup", "Accesorii & Genți", "Handmade", "Seturi Cadou"];
+  const categories = ["Toate", "Parfumuri", "Bijuterii", "Makeup", "Handmade", "Seturi Cadou", "Skin & Hair", "Pentru El"];
 
   const products = [
-    { id: 'c1', name: "Esență Dark Orchid", price: 450.00, category: "Parfumuri", image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c2', name: "Parfum Golden Aura", price: 350.00, category: "Parfumuri", image: "https://images.unsplash.com/photo-1595425970377-c9703bc48b2d?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c3', name: "LADY Midnight", price: 500.00, category: "Parfumuri", image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c4', name: "LADY Pandantiv Rubin", price: 6500.00, category: "Bijuterii", image: "https://images.unsplash.com/photo-1599643478524-fb66f7fa3656?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c5', name: "Cercei Swarovski", price: 4200.00, category: "Bijuterii", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c6', name: "Inel Obsidian Nobil", price: 5200.00, category: "Bijuterii", image: "https://images.unsplash.com/photo-1605100804763-247f67b254a6?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c7', name: "LADY Intense Rouge", price: 120.00, category: "Makeup", image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c8', name: "Set Pensule Onyx", price: 280.00, category: "Makeup", image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c9', name: "Paletă Nopți în Paris", price: 340.00, category: "Makeup", image: "https://images.unsplash.com/photo-1512496115841-db0aaf528000?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c10', name: "Geantă LADY Leather", price: 1800.00, category: "Accesorii & Genți", image: "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c11', name: "Clutch de Seară Noir", price: 950.00, category: "Accesorii & Genți", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c12', name: "Oglindă pentru poșetă", price: 140.00, category: "Accesorii & Genți", image: "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c13', name: "Săpun Artizanal LADY", price: 80.00, category: "Handmade", image: "https://images.unsplash.com/photo-1600857062241-9eb0e02aa114?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c14', name: "Brățară Handmade Șnur", price: 50.00, category: "Handmade", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c15', name: "Set Cadou Lux", price: 850.00, category: "Seturi Cadou", image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1000&auto=format&fit=crop" },
-    { id: 'c16', name: "Set Experiență Spa", price: 420.00, category: "Seturi Cadou", image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop" },
+    { id: 'c1', name: "Esență Dark Orchid", price: 450.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023.jpeg" },
+    { id: 'c2', name: "Parfum Golden Aura", price: 350.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_2.jpeg" },
+    { id: 'c3', name: "LADY Midnight", price: 500.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_3.jpeg" },
+    { id: 'h1', name: "Parfum de Cameră Santal", price: 180.00, category: "Parfumuri", image: "/Home_Fragrances_with_logo_LADY_202605181023.jpeg" },
+    { id: 'c4', name: "LADY Pandantiv Rubin", price: 480.00, category: "Bijuterii", image: "/Bijuterii_Handmade_LADY_logo_202605181023.jpeg" },
+    { id: 'c5', name: "Cercei Swarovski", price: 420.00, category: "Bijuterii", image: "/Bijuterii_Handmade_LADY_logo_202605181023_2.jpeg" },
+    { id: 'c6', name: "Inel Obsidian Nobil", price: 490.00, category: "Bijuterii", image: "/Semi-precious_stones_with_logo_202605181023.jpeg" },
+    { id: 'c7', name: "LADY Intense Rouge", price: 120.00, category: "Makeup", image: "/Makeup_cosmetics_with_logo_LADY_202605181023.jpeg" },
+    { id: 'c8', name: "Set Pensule Onyx", price: 280.00, category: "Makeup", image: "/Makeup_cosmetics_with_logo_LADY_202605181023_2.jpeg" },
+    { id: 'c9', name: "Paletă Nopți în Paris", price: 340.00, category: "Makeup", image: "/Makeup_cosmetics_with_logo_LADY_202605181023_3.jpeg" },
+    { id: 'c12', name: "Oglindă de buzunar", price: 140.00, category: "Makeup", image: "/Makeup_cosmetics_with_logo_LADY_202605181023_4.jpeg" },
+    { id: 'c13', name: "Săpun Artizanal LADY", price: 80.00, category: "Handmade", image: "/Skincare_Spa_with_logo_LADY_202605181023.jpeg" },
+    { id: 'c14', name: "Brățară Handmade Șnur", price: 50.00, category: "Handmade", image: "/Bijuterii_Handmade_LADY_logo_202605181023_3.jpeg" },
+    { id: 'c15', name: "Set Cadou Lux", price: 480.00, category: "Seturi Cadou", image: "/Gift_sets_with_logo_202605181023.jpeg" },
+    { id: 'c16', name: "Set Experiență Spa", price: 420.00, category: "Seturi Cadou", image: "/Gift_sets_with_logo_202605181023_2.jpeg" },
+    { id: 's1', name: "LADY Hair Elixir", price: 210.00, category: "Skin & Hair", image: "/Make_body_care_products_logo_202605181811.jpeg" },
+    { id: 's2', name: "Șampon Revitalizant", price: 90.00, category: "Skin & Hair", image: "/Make_body_care_products_logo_202605181811_2.jpeg" },
+    { id: 's3', name: "Ser cu Acid Hialuronic", price: 150.00, category: "Skin & Hair", image: "/make_me_som_pordcuts_for_202605181811.jpeg" },
+    { id: 'm1', name: "Parfum LADY Homme", price: 480.00, category: "Pentru El", image: "/Make_products_for_Men's_Collection_202605181811.jpeg" },
+    { id: 'm2', name: "Set Îngrijire Barbă", price: 230.00, category: "Pentru El", image: "/make_me_som_pordcuts_for_202605181811_2.jpeg" },
   ];
 
   const filteredProducts = activeCategory === "Toate" 
@@ -83,8 +87,8 @@ export default function SectionCatalog({ addToCart }: Props) {
                 className="flex flex-col group cursor-pointer"
               >
                 <div className="w-full aspect-[4/5] bg-[#050202] border border-red-900/20 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40 group-hover:bg-red-900/20 transition-all duration-700">AICEA VINE POZELE</div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                  <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050202] via-[#050202]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 z-0" />
                   
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
@@ -98,7 +102,7 @@ export default function SectionCatalog({ addToCart }: Props) {
                 <div className="flex flex-col bg-transparent px-1">
                   <span className="text-[8px] uppercase tracking-widest text-red-500/80 mb-1">{product.category}</span>
                   <h3 className="text-xs font-bold text-white mb-2 line-clamp-1 group-hover:text-red-400 transition-colors">{product.name}</h3>
-                  <span className="font-mono text-xs text-white/70">${product.price.toFixed(2)}</span>
+                  <span className="font-mono text-xs text-white/70">{product.price.toFixed(2)} RON</span>
                 </div>
               </motion.div>
             ))}

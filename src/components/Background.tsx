@@ -18,7 +18,7 @@ export default function Background() {
   const [petals, setPetals] = useState<any[]>([]);
 
   useEffect(() => {
-    setPetals(generatePetals(30));
+    setPetals(generatePetals(150));
   }, []);
 
   return (

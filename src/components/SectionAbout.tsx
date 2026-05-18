@@ -45,7 +45,7 @@ export default function SectionAbout() {
           </div>
 
           <div className="w-full aspect-square md:aspect-auto md:h-full bg-[#050202] rounded-xl border border-red-900/20 relative overflow-hidden flex items-center justify-center min-h-[400px]">
-            <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40">AICEA VINE POZELE</div>
+            <img src="/Make_body_care_products_logo_202605181811.jpeg" alt="Despre F.E. LADY S.R.L." className="absolute inset-0 w-full h-full object-cover opacity-80" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.1)_0%,transparent_70%)]" />
           </div>
         </div>

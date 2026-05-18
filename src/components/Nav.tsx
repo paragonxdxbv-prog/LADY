@@ -44,12 +44,13 @@ export default function Nav({ onOpenCart, cartItemsCount }: NavProps) {
         </div>
         
         {/* Desktop Links */}
-        <div className="hidden lg:flex flex-row items-center gap-5 text-[10px] font-semibold tracking-widest text-white/70 uppercase whitespace-nowrap px-4 shrink-0">
+        <div className="hidden lg:flex flex-row items-center gap-5 text-[10px] font-semibold tracking-widest text-white/70 uppercase whitespace-nowrap px-4 shrink-0 overflow-x-auto max-w-[60vw]">
           <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="hover:text-white transition-colors cursor-pointer">Parfumuri</motion.a>
           <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#bijuterii" onClick={(e) => scrollTo(e, 'bijuterii')} className="hover:text-white transition-colors cursor-pointer">Bijuterii</motion.a>
           <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#makeup" onClick={(e) => scrollTo(e, 'makeup')} className="hover:text-white transition-colors cursor-pointer">Makeup</motion.a>
-          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#accesorii" onClick={(e) => scrollTo(e, 'accesorii')} className="hover:text-white transition-colors cursor-pointer">Accesorii & Genți</motion.a>
           <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#seturi" onClick={(e) => scrollTo(e, 'seturi')} className="hover:text-white transition-colors cursor-pointer">Seturi Cadou</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#skin" onClick={(e) => scrollTo(e, 'skin')} className="hover:text-white transition-colors cursor-pointer">Skin & Hair</motion.a>
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#pentruel" onClick={(e) => scrollTo(e, 'pentruel')} className="hover:text-white transition-colors cursor-pointer">Pentru El</motion.a>
         </div>
 
         <div className="px-3 border-l border-red-900/30 items-center shrink-0 hidden lg:flex">
@@ -96,8 +97,9 @@ export default function Nav({ onOpenCart, cartItemsCount }: NavProps) {
             <a href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Parfumuri</a>
             <a href="#bijuterii" onClick={(e) => scrollTo(e, 'bijuterii')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Bijuterii</a>
             <a href="#makeup" onClick={(e) => scrollTo(e, 'makeup')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Makeup</a>
-            <a href="#accesorii" onClick={(e) => scrollTo(e, 'accesorii')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Accesorii & Genți</a>
             <a href="#seturi" onClick={(e) => scrollTo(e, 'seturi')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Seturi Cadou</a>
+            <a href="#skin" onClick={(e) => scrollTo(e, 'skin')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Skin & Hair</a>
+            <a href="#pentruel" onClick={(e) => scrollTo(e, 'pentruel')} className="text-xs font-bold tracking-widest text-white uppercase hover:text-red-400 transition-colors py-2">Pentru El</a>
             <a href="#parfumuri" onClick={(e) => scrollTo(e, 'parfumuri')} className="text-[10px] font-bold tracking-widest text-red-500 uppercase hover:text-red-400 transition-colors py-2 mt-2 border-t border-red-900/30 pt-4">Derulează în jos &darr;</a>
           </motion.div>
         )}

@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react';
 
 export default function SectionResonance() {
   const products = [
-    { id: '1', name: "LADY Midnight Perfume", price: 450.00, category: "Parfumuri", image: "https://i.pinimg.com/736x/2b/be/24/2bbe246a10bec01084d409f5729adb95.jpg" },
-    { id: '2', name: "LADY intense Rouge", price: 120.00, category: "Makeup", image: "https://i.pinimg.com/736x/c3/99/b1/c399b19670382335a9caa7df775bd617.jpg" },
-    { id: '3', name: "Cercei Handmade Aur", price: 380.00, category: "Bijuterii Handmade", image: "https://i.pinimg.com/736x/c3/99/b1/c399b19670382335a9caa7df775bd617.jpg" },
-    { id: '4', name: "Inel Obsidian Nobil", price: 5200.00, category: "Bijuterii", image: "https://i.pinimg.com/736x/74/05/a5/7405a500c3fb4d845e8ad3b242997c0f.jpg" },
+    { id: '1', name: "LADY Midnight Perfume", price: 450.00, category: "Parfumuri", image: "/Perfumes_with_logo_LADY_202605181023_2.jpeg" },
+    { id: '2', name: "LADY intense Rouge", price: 120.00, category: "Makeup", image: "/Makeup_cosmetics_with_logo_LADY_202605181023_2.jpeg" },
+    { id: '3', name: "Cercei Handmade Aur", price: 380.00, category: "Bijuterii Handmade", image: "/Bijuterii_Handmade_LADY_logo_202605181023_2.jpeg" },
+    { id: '4', name: "Inel Obsidian Nobil", price: 490.00, category: "Bijuterii", image: "/Semi-precious_stones_with_logo_202605181023.jpeg" },
   ];
 
   return (
@@ -46,8 +46,8 @@ export default function SectionResonance() {
               className="flex flex-col group cursor-pointer"
             >
               <div className="w-full aspect-[4/5] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/40 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40 group-hover:bg-red-900/20 transition-all duration-700">AICEA VINE POZELE</div>
-                <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0505]/80 via-[#0a0505]/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500 z-0" />
                 
                 <motion.a 
                   href="#magazin"

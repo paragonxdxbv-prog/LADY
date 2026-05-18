@@ -35,8 +35,8 @@ export default function SectionAtelier() {
             className="flex flex-col group cursor-pointer"
           >
             <div className="w-[calc(100%-8px)] mx-auto aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40 group-hover:bg-red-900/20 transition-all duration-700">AICEA VINE POZELE</div>
-              <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
+              <img src="/Skincare_Spa_with_logo_LADY_202605181023_3.jpeg" alt="Producție și R&D" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-[#0a0505]/20 group-hover:bg-[#0a0505]/0 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">
               <div>
@@ -57,8 +57,8 @@ export default function SectionAtelier() {
             className="flex flex-col group cursor-pointer md:mt-12"
           >
             <div className="w-[calc(100%-8px)] mx-auto aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-               <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40 group-hover:bg-red-900/20 transition-all duration-700">AICEA VINE POZELE</div>
-               <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
+              <img src="/Semi-precious_stones_with_logo_202605181023_2.jpeg" alt="Retail Premium" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-[#0a0505]/20 group-hover:bg-[#0a0505]/0 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">
               <div>
@@ -79,8 +79,8 @@ export default function SectionAtelier() {
             className="flex flex-col group cursor-pointer"
           >
             <div className="w-[calc(100%-8px)] mx-auto aspect-[3/4] bg-[#0a0505]/60 backdrop-blur-md border border-red-900/30 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
-               <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-4 border border-red-900/40 group-hover:bg-red-900/20 transition-all duration-700">AICEA VINE POZELE</div>
-               <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/40 transition-colors duration-500 z-0" />
+              <img src="/Perfumes_with_logo_LADY_202605181023_4.jpeg" alt="Distribuție B2B" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-[#0a0505]/20 group-hover:bg-[#0a0505]/0 transition-colors duration-500 z-0" />
             </div>
             <div className="flex justify-between items-start px-2">
               <div>

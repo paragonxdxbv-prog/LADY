@@ -25,6 +25,9 @@ const SectionPhilosophy = lazy(() => import('./components/SectionPhilosophy'));
 const SectionJewelry = lazy(() => import('./components/SectionJewelry'));
 const SectionPress = lazy(() => import('./components/SectionPress'));
 const SectionConcierge = lazy(() => import('./components/SectionConcierge'));
+const SectionTestimonials = lazy(() => import('./components/SectionTestimonials'));
+const SectionLocations = lazy(() => import('./components/SectionLocations'));
+const SectionNewsletter = lazy(() => import('./components/SectionNewsletter'));
 
 // Suspense fallback for lazy loaded sections
 const SectionLoader = () => (
@@ -73,9 +76,12 @@ export default function App() {
           <SectionMaterials />
           <SectionRelics />
           <SectionJewelry />
+          <SectionTestimonials />
           <SectionPress />
           <SectionConcierge />
+          <SectionLocations />
           <SectionPhilosophy />
+          <SectionNewsletter />
         </Suspense>
       </main>
 

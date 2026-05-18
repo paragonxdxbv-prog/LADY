@@ -56,7 +56,7 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
                   <motion.div key={item.id} layout className="flex gap-4 p-4 border border-red-900/20 rounded-2xl bg-black/40">
                     <div className="w-20 h-24 bg-[#110505] rounded-xl flex items-center justify-center border border-red-900/10 shrink-0 overflow-hidden relative">
                        {item.image ? (
-                         <div className="absolute inset-0 w-full h-full bg-red-900/10 flex items-center justify-center text-[6px] font-bold text-white/50 tracking-[0.2em] uppercase text-center p-1 border border-red-900/40">AICEA VINE POZELE</div>
+                         <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover" />
                        ) : (
                          <span className="text-[8px] uppercase text-white/20">IMG</span>
                        )}
@@ -77,7 +77,7 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
                            <span className="text-xs font-mono">{item.quantity}</span>
                            <Plus size={10} className="opacity-50 cursor-pointer" />
                         </div>
-                        <span className="font-mono text-sm text-white/90">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-mono text-sm text-white/90">{(item.price * item.quantity).toFixed(2)} RON</span>
                       </div>
                     </div>
                   </motion.div>
@@ -90,7 +90,7 @@ export default function Cart({ isOpen, onClose, cartItems, onRemove }: CartProps
                <div className="p-6 border-t border-red-900/30 bg-black flex flex-col gap-6">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-white/60 tracking-widest uppercase text-xs">Total</span>
-                  <span className="font-mono text-lg text-white">${subtotal.toFixed(2)}</span>
+                  <span className="font-mono text-lg text-white">{subtotal.toFixed(2)} RON</span>
                 </div>
                 <button className="w-full bg-white text-black py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white border border-transparent hover:border-red-500 transition-all cursor-pointer">
                   Finalizează Comanda
